@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saat ve Karşılama</title>
+</head>
+<style>
+    body{
+        background-color: rgb(52, 50, 50);
+        margin-top: 100px;
+    }
+    *{
+        color: rgb(173, 144, 90);
+        text-align: center;
+    }
+    p{
+        size: 40px;
+    }
+</style>
+<body>
+    <h1>KODLUYORUZ</h1>
+    <h2 class="name"></h2>
+    <h2 class="date"></h2>
+    <p>tarihinde <strong>Kodluyoruz Frontend Web Development Patikası</strong>'nın Javascript</p>
+    <p>bölümü 1. Ödevindesiniz.</p>
+
+
+    <script>
+        let namePrompt=prompt("Lütfen Adınızı Yazınız")
+        let nameSurname=document.querySelector(".name")
+        nameSurname.innerHTML=`Merhaba, ${namePrompt}! Hoş geldin!`
+
+        function tarihSaat(){
+            let date= new Date()
+            let dateShow=document.querySelector(".date")
+            let days=["Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi","Pazar"]
+            let day=date.getDay()
+            let hour=date.getHours()
+            let minutes=date.getMinutes()
+            let seconds=date.getSeconds()
+
+
+            dateShow.innerHTML=`${hour}:${minutes}:${seconds} ${days[day]}`;
+        }
+
+        setInterval(tarihSaat,1000);
+    </script>
+</body>
+</html>
